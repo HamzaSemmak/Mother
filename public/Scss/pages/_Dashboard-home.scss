@@ -1,0 +1,256 @@
+/*
+*
+*   page : Home Dahshboared
+* 
+*/
+
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+@import '../components/Button';
+
+.Dashboard-home {
+    height: 75vh;
+    width: 100%;
+    .section-one {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        h1 {
+            font-size: 22px;
+            font-weight: 600;
+            font-style: normal;
+            font-variant: normal;
+            line-height: normal;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+    }
+    .section-tow {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .Dashboard-card {
+            width: 300px;
+            height: 280px;
+            padding: 20px;
+            margin: 10px 20px;
+            background-color: $White;
+            border: none;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.06) !important;
+            position: relative;
+            border-radius: 12px;
+            .bg-success {
+                background-color: #198754;
+            }
+            .color-success {
+                color: #198754;
+            }
+            .bg-warning {
+                background-color: #ffc107;
+            }
+            .color-warning {
+                color: #ffc107;
+            }
+            .bg-danger {
+                background-color: #dc3545;
+            }
+            .color-danger {
+                color: #dc3545;
+            }
+            .icon {
+                color: $White;
+                font-size: 21px;
+                font-weight: 700;
+                padding: 12px;
+                border: 1px solid $White;
+                border-radius: 50%;
+                position: absolute;
+                left: 50%;
+                top: 0%;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+            }
+            .section-1 {
+                margin-top: 25px;
+                font-size: 18px;
+                font-weight: 700;
+                font-style: normal;
+                letter-spacing: 1.3px;
+                text-transform: uppercase;
+            }
+            .section-2 {
+                margin-block-start: 30px;
+                font-size: 16px;
+                font-style: 600;
+                line-height: 25px;
+                .right {
+                    float: right;
+                }
+            }
+            .section-3 {
+                position: absolute;
+                bottom: 0%;
+                left: 50%;
+                transform: translateX(-50%) !important;
+                height: 50px;
+                width: 100%;
+                background-color: $dash-bg;
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                a {
+                    font-size: 16px;
+                    font-weight: 700;
+                    letter-spacing: 1.1px;
+
+                    i:hover {
+                        color: $Black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+*
+*   Media Query :  
+*
+*/
+
+@include x-large {
+    .Dashboard-home {
+        height: auto;
+        .section-one {
+            padding: 20px;
+            h1 {
+                font-size: 20px;
+                letter-spacing: normal;
+            }
+        }
+        .section-tow {
+            margin-block-start: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .Dashboard-card {
+                width: 300px;
+                height: 280px;
+                padding: 20px;
+                margin: 20px 0px;
+                .icon {
+                    font-size: 19px;
+                    padding: 11px;
+                }
+                .section-1 {
+                    margin-top: 25px;
+                    font-size: 18px;
+                    letter-spacing: 1.3px;
+                }
+                .section-2 {
+                    margin-block-start: 50px;
+                    font-size: 15px;
+                    line-height: 22px;
+                }
+                .section-3 {
+                    height: 40px;
+                    width: 100%;
+                    padding: 10px;
+                    a {
+                        font-size: 15px;
+                        letter-spacing: 1.1px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include meduim {
+    .Dashboard-home {
+        height: auto;
+        .section-one {
+            padding: 20px;
+            h1 {
+                font-size: 18px;
+            }
+        }
+        .section-tow {
+            .Dashboard-card {
+                width: 300px;
+                height: 280px;
+                padding: 20px;
+                margin: 20px 0px;
+                .icon {
+                    font-size: 18px;
+                    padding: 11px;
+                }
+                .section-1 {
+                    margin-top: 25px;
+                    font-size: 16px;
+                    letter-spacing: 1.3px;
+                }
+                .section-2 {
+                    margin-block-start: 50px;
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+                .section-3 {
+                    height: 40px;
+                    width: 100%;
+                    padding: 10px;
+                    a {
+                        font-size: 14px;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include x-small {
+    .Dashboard-home {
+        height: auto;
+        .section-one {
+            padding: 5px;
+            h1 {
+                font-size: 16px;
+            }
+        }
+        .section-tow {
+            padding: 0;
+            .Dashboard-card {
+                width: 98%;
+                height: 250px;
+                padding: 20px;
+                .icon {
+                    font-size: 18px;
+                    padding: 11px;
+                }
+                .section-1 {
+                    margin-top: 25px;
+                    font-size: 12px;
+                    letter-spacing: 1.3px;
+                }
+                .section-2 {
+                    font-size: 12px;
+                }
+                .section-3 {
+                    padding: 10px;
+                    display: inline-block;
+                    a {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

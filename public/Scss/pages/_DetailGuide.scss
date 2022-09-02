@@ -1,0 +1,179 @@
+/*
+*
+*   page : Video
+* 
+*/
+
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+@import '../components/Button';
+
+
+.DetailGuide {
+    width: 100%;
+    height: auto;
+    background-color: $White;
+    color: $Black;
+    margin-block: 50px;
+    .content {
+        @include container;
+        padding: 10px;
+        .Block-text {
+            padding: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            h1 {
+                font-size: 35px;
+                font-weight: 800;
+                font-style: normal;
+                font-variant: normal;
+                letter-spacing: 0.1px;
+                line-height: normal;
+                text-transform: uppercase;
+                margin: 20px 0px;
+            }
+            .txt {
+                font-size: 16px;
+                font-style: normal;
+                font-variant: normal;
+                line-height: normal;
+                text-align: justify;
+                margin-block-end: 20px;
+                li {
+                    list-style: square;
+                    margin: 0 40px;
+                }
+            }
+            hr {
+                border: 1px solid $First-color;
+                background-color: $First-color;
+                border-radius: 4px;
+                margin-block: 25px;
+            }
+        }
+        .txt-active {
+            width: 100%;
+            text-align: end;
+            margin-top: 50px;
+            a {
+                font-size: 18px;
+                color: $Black;
+                font-style: normal;
+                font-variant: normal;
+                line-height: normal;
+                font-weight: 700;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+/*
+*
+*   Media Query :
+*
+*/
+@include x-large {
+    .DetailGuide {
+        margin-block: 0px;
+        .content {
+            padding: 10px;
+            .Block-text {
+                padding: 10px;
+                max-width: none;
+                h1 {
+                    font-size: 28px;
+                    margin: 20px 0px;
+                    text-align: center;
+                }
+                .txt {
+                    font-size: 14px;
+                    line-height: 18px;
+                    margin-block-end: 15px;
+                    li {
+                        list-style: square;
+                        margin: 0 30px;
+                    }
+                }
+                hr {
+                    margin-block: 20px;
+                }
+            }
+            .txt-active {
+                margin-top: 30px;
+                margin-bottom: 20px;
+                text-align: center;
+                a {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+@include large {
+    .DetailGuide {
+        .content {
+            padding: 10px;
+            .Block-text {
+                padding: 10px;
+                h1 {
+                    font-size: 20px;
+                    margin: 20px 10px;
+                }
+                .txt {
+                    font-size: 13px;
+                    margin-block-end: 15px;
+                    li {
+                        margin: 0 20px;
+                    }
+                }
+                hr {
+                    margin-block: 20px;
+                }
+            }
+            .txt-active {
+                margin-top: 30px;
+                margin-bottom: 20px;
+                a {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+
+@include small {
+    .DetailGuide {
+        .content {
+            .Block-text {
+                h1 {
+                    font-size: 16px;
+                    margin: 15px 10px;
+                }
+                .txt {
+                    font-size: 12px;
+                    margin-block-end: 13px;
+                    li {
+                        margin: 0 20px;
+                    }
+                }
+                hr {
+                    margin-block: 15px;
+                }
+            }
+            .txt-active {
+                margin-top: 20px;
+                margin-bottom: 15px;
+                a {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}

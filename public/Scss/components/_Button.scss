@@ -1,0 +1,32 @@
+/*
+*
+*   Default Style of Btn 
+* 
+*/
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+%Btn {
+    color: $White;
+    background-color: $First-color;
+    padding: 13px;
+    text-align: center;
+    width: auto;
+    height: auto;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    margin-block: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-variant: normal;
+    letter-spacing: normal;
+    line-height: normal;
+    line-height: 22px;
+    text-transform: uppercase; 
+    cursor: pointer;
+
+    &:hover { color: $First-color; background-color: $White;}
+}

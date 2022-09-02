@@ -1,0 +1,114 @@
+/*
+*
+*   page : 404
+* 
+*/
+
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+@import '../components/Button';
+
+
+.content-404 {
+    @include container;
+    height: 500px;
+    padding: 20px;
+    color: $Gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    h1 {
+        font-family: "Raleway", sans-serif;
+        font-size: 70px;
+        font-weight: bold;
+        font-style: normal;
+        font-variant: normal;
+        letter-spacing: normal;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-block: 15px;
+    }
+    p {
+        max-width: 350px;
+        font-family: "Raleway", sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        font-style: normal;
+        font-variant: normal;
+        letter-spacing: normal;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-block-end: 20px
+    }
+    a {
+        @extend %Btn;
+    }
+}
+
+@include xxx-large {
+    .content-404 {
+        height: 400px;
+        padding: 20px;
+        color: $Gray;
+        h1 {
+            font-size: 50px;
+            margin-block: 8px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 20px;
+            margin-block-end: 10px;
+            max-width: 400px;
+        }
+        button {
+            padding: 10px;
+            font-size: 14px;
+        }
+    }    
+}
+
+@include meduim {
+    .content-404 {
+        height: 200px;
+        padding: 0;
+        color: $Gray;
+        h1 {
+            font-size: 30px;
+            margin-block: 8px;
+        }
+        p {
+            font-size: 12px;
+            line-height: 20px;
+            margin-block-end: 0px;
+            max-width: 400px;
+        }
+        button {
+            padding: 10px;
+            font-size: 12px;
+        }
+    }  
+}
+
+@include small {
+    .content-404 {
+        height: 200px;
+        padding: 0;
+        color: $Gray;
+        h1 {
+            font-size: 25px;
+            margin-block: 8px;
+        }
+        p {
+            font-size: 10px;
+            line-height: normal;
+            margin-block-end: 0px;
+            max-width: none;
+        }
+        button {
+            padding: 8px;
+            font-size: 10px;
+        }
+    } 
+}

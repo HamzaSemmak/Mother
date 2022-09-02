@@ -1,0 +1,92 @@
+/*
+*
+*   page : Product
+* 
+*/
+
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+@import '../components/Button';
+
+
+.Page-Product {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin-top: 90px;
+    .section-1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 40px;
+        h1 {
+            font-size: 30px;
+            font-weight: 700;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 1px;
+            color: $Black;
+            text-transform: uppercase;
+        }
+        div {
+            i {
+                padding: 12px;
+                background-color: $Black;
+                border-radius: 50%;
+                text-align: center;
+                font-size: 22px;
+                font-weight: 900;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: 1px;
+                color: $White;
+
+                &:hover {
+                    background-color: $First-color;
+                }
+            }
+        }
+    }
+    .section-2 {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        margin-block-start: 20px;
+        table {
+            width: 100%;
+            height: auto;
+        }
+        th {
+            text-align: left;
+            background-color: $White;
+            padding: 20px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        td {
+            text-align: center;
+            background-color: $White;
+            font-size: 16px;
+            font-weight: 600;
+            img {
+                width: 150px;
+                height: 130px;
+            }
+            .bg-success {
+                background-color: #198754;
+                padding: 10px;
+                color: $White;
+                margin: 0 5px;
+            }
+            .bg-danger {
+                background-color: #dc3545;
+                padding: 10px;
+                color: $White;
+                margin: 0 5px;
+            }
+        }
+    }
+}

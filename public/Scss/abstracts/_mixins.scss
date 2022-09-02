@@ -1,0 +1,93 @@
+/*
+*
+*   mixin :
+*   Mixins allow you to define
+*   styles that can be re-used 
+*   throughout your stylesheet.
+*
+*/
+ 
+/* Systeme Media Queries */
+$Breakpoints : (
+    "x-small": 350px,
+    "small": 400px,
+    "meduim": 600px,
+    "large": 768px,
+    "x-large": 997px,
+    "xx-large": 1200px,
+    "xxx-large": 1400px,
+);
+@mixin x-small {
+    @media only screen and (max-width: map-get($Breakpoints, "x-small")) {
+        @content;
+    }
+}
+@mixin small {
+    @media only screen and (max-width: map-get($Breakpoints, "small")) {
+        @content;
+    }
+}
+@mixin meduim {
+    @media only screen and (max-width: map-get($Breakpoints, "meduim")) {
+        @content;
+    }
+}
+@mixin large {
+    @media only screen and (max-width: map-get($Breakpoints, "large")) {
+        @content;
+    }
+}
+@mixin x-large {
+    @media only screen and (max-width: map-get($Breakpoints, "x-large")) {
+        @content;
+    }
+}
+@mixin xx-large {
+    @media only screen and (max-width: map-get($Breakpoints, "xx-large")) {
+        @content;
+    }
+}
+@mixin xxx-large {
+    @media only screen and (max-width: map-get($Breakpoints, "xxx-large")) {
+        @content;
+    }
+}
+
+/* 
+*   
+*   Page Controll 
+*
+*/
+@mixin container-fluid {
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+}
+@mixin container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* 
+*
+*   Flex
+*
+*/
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+/* 
+*
+*   img-responsive
+*
+*/
+@mixin img-fluid {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}

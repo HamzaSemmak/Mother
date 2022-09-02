@@ -1,0 +1,28 @@
+/*
+*
+*   Default Style of Btn 
+* 
+*/
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.btnScrollTop {
+    padding: 12px;
+    color: $White;
+    background-color: $First-color;
+    font-size: 14px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    text-align: center;
+    transition: all 1s ease;
+    cursor: pointer;
+    display: none;
+    
+    &:hover {
+        background-color: #000;
+        cursor: pointer;
+    }
+}

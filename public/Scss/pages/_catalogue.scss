@@ -1,0 +1,444 @@
+/*
+*
+*   page : Catalogue : 
+* 
+*/
+
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+@import '../components/Button';
+
+.cataloque-header {
+    color: $White;
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/catalogue-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 10px;
+    .content {
+        @include container;
+        height: 100%;
+        @include flex;
+        text-align: center;
+        div {
+            h1 {
+                font-size: 50px;
+                font-weight: 700;
+                font-style: normal;
+                font-variant: normal;
+                margin-block-end: 40px;
+            }
+            p {
+                max-width: 700px;
+                font-size: 18px;
+                font-weight: 600;
+                font-style: normal;
+                font-variant: normal;
+            }
+        }
+    }
+}
+.catalogue-main {
+    background-color: $White;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    .content {
+        height: auto;
+        width: 100%;
+        padding: 20px;
+        @include container;
+        margin-block: 20px;
+        .section-one {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 16px;
+                font-weight: 500;
+                font-style: normal;
+                font-variant: normal;
+                span {
+                    font-size: 18px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    margin: 10px 30px;
+                }
+                span {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .product {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            .card {
+                width: 263px;
+                margin: 10px;
+                height: 420px;
+                .card-img {
+                    height: 336px;
+                    width: 100%;
+                    img {
+                        @include img-fluid;
+                    }
+                }
+                .card-text {
+                    padding: 5px;
+                    font-size: 16px;
+                    font-weight: normal;
+                    font-style: normal;
+                    font-variant: normal;
+                    letter-spacing: normal;
+                    line-height: 20px;
+                    text-transform: lowercase;
+                    color: $Card-color;
+                    margin-block-end: 5px;
+                }
+                .card-pannier {
+                    display: none;
+                }
+                .card-price {
+                    width: 100%;
+                    height: auto;
+                    padding: 5px;
+                    font-size: 16px;
+                    font-weight: 900;
+                    font-style: italic;
+                    font-variant: normal;
+                    letter-spacing: normal;
+                    text-transform: uppercase;
+                    color: $First-color;
+                    margin-block-end: 5px;
+                }
+                .card-voir {
+                    display: none;
+                }
+                &:hover {
+                    overflow: hidden;
+                    height: 420px;
+                    .card-img {
+                        transition: all 0.5s ease;
+                        overflow: hidden;
+                        height: 250px;
+                        width: 100%;
+                        img {
+                            @include img-fluid;
+                        }
+                    }
+                    .card-voir {
+                        cursor: pointer;
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        padding: 10px;
+                        text-align: center;
+                        margin-block-end: 5px;
+                        transition: 0.5s;
+                        a {
+                            font-size: 14px;
+                            font-weight: 900;
+                            color: $First-color;
+                            text-transform: uppercase;
+                        }
+                        &:hover {
+                            a {
+                                color: $White;
+                            }
+                            background-color: $First-color;
+                        }
+                    }
+                    .card-pannier {
+                        cursor: pointer;
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        padding: 10px;
+                        margin-block-end: 5px;
+                        transition: 0.5s;
+                        text-align: center;
+                        a {
+                            font-size: 14px;
+                            font-weight: 900;
+                            color: $First-color;
+                            text-transform: uppercase;
+                        }
+                        &:hover {
+                            a {
+                                color: $White;
+                            }
+                            background-color: $First-color;
+                        }
+                    }
+                    .card-price {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .btn-product {
+            width: 100%;
+            text-align: center;
+            a {
+                margin-block-start: 40px;
+                font-size: 18px;
+                font-weight: 700;
+                font-style: normal;
+                font-variant: normal;
+                letter-spacing: normal;
+                text-transform: uppercase;
+                color: $First-color;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* 
+*
+*   Media Query : 
+*
+*/
+
+@include x-large {
+    .cataloque-header {
+        height: 100%;
+        width: 100%;
+        .content {
+            div {
+                h1 {
+                    font-size: 30px;
+                    margin-block-end: 25px;
+                }
+                p {
+                    max-width: 600px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .catalogue-main {
+        padding: 5px;
+        .content {
+            padding: 10px;
+            .section-one {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                div {
+                    font-size: 14px;
+                    span {
+                        font-size: 16px;
+                        margin: 0px 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+@include large {
+    .cataloque-header {
+        height: 100%;
+        width: 100%;
+        .content {
+            div {
+                h1 {
+                    font-size: 30px;
+                    margin-block-end: 20px;
+                }
+                p {
+                    max-width: none;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .catalogue-main {
+        padding: 5px;
+        .content {
+            padding: 0px;
+            .section-one {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                div {
+                    font-size: 12px;
+                    span {
+                        font-size: 14px;
+                        margin: 0px 8px;
+                    }
+                }
+            }
+            .product {
+                .card {
+                    width: 263px;
+                    margin: 10px;
+                    height: 420px;
+                    .card-text {
+                        font-size: 14px;
+                    }
+                    .card-price {
+                        font-size: 14px;
+                    }
+                    &:hover {
+                        overflow: hidden;
+                        height: 420px;
+                        .card-img {
+                            transition: all 0.5s ease;
+                            overflow: hidden;
+                            height: 250px;
+                            width: 100%;
+                            img {
+                                @include img-fluid;
+                            }
+                        }
+                        .card-voir {
+                            a {
+                                font-size: 13px;
+                            }
+                        }
+                        .card-pannier {
+                            a {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+            .btn-product {
+                a {
+                    margin-block-start: 40px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+@include meduim {
+    .cataloque-header {
+        height: 100%;
+        width: 100%;
+        .content {
+            div {
+                h1 {
+                    font-size: 18px;
+                    margin-block-end: 20px;
+                }
+                p {
+                    max-width: none;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+    .catalogue-main {
+        padding: 5px;
+        .content {
+            padding-left: 10px;
+            padding-right: 10px;
+            .section-one {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                div {
+                    font-size: 10px;
+                    .text-none {
+                        display: none;
+                    }
+                    span {
+                        font-size: 11px;
+                        margin: 0px 2px;
+                    }
+                }
+            }
+            .product {
+                .card {
+                    width: 250px;
+                    height: auto;
+                    margin: 10px;
+                    .card-img {
+                        height: auto;
+                        width: 100%;
+                        img {
+                            @include img-fluid;
+                        }
+                    }
+                    .card-text {
+                        font-size: 12px;
+                    }
+                    .card-price {
+                        font-size: 12px;
+                    }
+                    &:hover {
+                        .card-voir {
+                            a {
+                                font-size: 11px;
+                            }
+                        }
+                        .card-pannier {
+                            a {
+                                font-size: 11px;
+                            }
+                        }
+                    }
+                }
+            }
+            .btn-product {
+                a {
+                    margin-block-start: 40px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+@include x-small {
+    .cataloque-header {
+        height: 100%;
+        width: 100%;
+        .content {
+            div {
+                h1 {
+                    font-size: 16px;
+                    margin-block-end: 20px;
+                }
+                p {
+                    max-width: none;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+    .catalogue-main {
+        .content {
+            .btn-product {
+                a {
+                    margin-block-start: 40px;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}

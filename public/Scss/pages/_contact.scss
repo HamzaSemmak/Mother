@@ -1,0 +1,165 @@
+/*
+*
+*   page : Contact
+* 
+*/
+
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+@import '../components/Button';
+
+
+.contact {
+    @include container;
+    height: 670px;
+    padding: 20px;
+    .row {
+        width: 100%;
+        height: 100%;
+        .col-6:nth-child(1) {
+            @include flex;
+        }
+        .col-6:nth-child(2) {
+            padding: 20px;
+        }
+        .col-6 {
+            height: 100%;
+            img {
+                @include img-fluid;
+            }
+            h5 {
+                font-size: 25px;
+                font-weight: 900;
+                font-style: normal;
+                font-variant: normal;
+                letter-spacing: 0.1px;
+                line-height: normal;
+                color: $First-color;
+                margin-block-end: 5px;
+            }
+            .text {
+                font-size: 16px;
+                font-weight: 500;
+                font-style: normal;
+                font-variant: normal;
+                line-height: normal;
+                text-transform: lowercase;
+                text-align: justify;
+            }
+            form {
+                margin-block-start: 40px;
+                .form-control {
+                    background-color: #f1f1f1;
+                }
+                button {
+                    @extend %Btn;
+                    margin-block-start: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+/*
+*
+*   Media Query : 
+*
+*/
+@include large {
+    .contact {
+        height: 670px;
+        padding: 10px;
+        .row {
+            .col-6:nth-child(2) {
+                padding: 15px;
+                margin-block-start: 50px;
+            }
+            .col-6 {
+                text-align: center;
+                h5 {
+                    font-size: 20px;
+                }
+                .text {
+                    font-size: 14px;
+                    text-align: center;
+                }
+                form {
+                    .form-control {
+                        background-color: #f1f1f1;
+                    }
+                    input::placeholder {
+                        font-size: 14px
+                    }
+                    button {
+                        margin-block-start: 20px;
+                        padding: 10px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include meduim {
+    .contact {
+        .row {
+            .col-6:nth-child(2) {
+                padding: 10px;
+            }
+            .col-6 {
+                h5 {
+                    font-size: 18px;
+                }
+                .text {
+                    font-size: 13px;
+                }
+                form {
+                    input::placeholder {
+                        font-size: 13px
+                    }
+                    textarea {
+                        height: 200px;
+                    }
+                    button {
+                        font-size: 13px;
+                        padding: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include x-small {
+    .contact {
+        .row {
+            .col-6:nth-child(2) {
+                padding: 0px;
+            }
+            .col-6 {
+                h5 {
+                    font-size: 18px;
+                }
+                .text {
+                    font-size: 13px;
+                }
+                form {
+                    input::placeholder {
+                        font-size: 10px;
+                    }
+                    textarea {
+                        font-size: 10px;
+                        height: 200px;
+                    }
+                    button {
+                        font-size: 13px;
+                        padding: 8px;
+                    }
+                }
+            }
+        }
+    }
+}

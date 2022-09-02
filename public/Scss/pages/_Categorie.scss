@@ -1,0 +1,291 @@
+/*
+*
+*   page : Categorie
+* 
+*/
+
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+@import '../components/Button';
+
+
+.Categorie {
+    height: auto;
+    width: 100%;
+    background-color: $White;
+    color: $Black;
+    margin-block: 50px;
+    .content {
+        @include container;
+        color: $Black;
+        height: 100%;
+        padding: 20px;
+        .text {
+            margin-block-end: 30px;
+            text-align: center;
+            h1 {
+                font-size: 30px;
+                font-weight: 900;
+                font-style: normal;
+                font-variant: normal;
+                letter-spacing: 0.1px;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+            p {
+                font-size: 16px;
+                font-weight: 700;
+                font-style: normal;
+                font-variant: normal;
+                line-height: normal;
+                text-transform: lowercase;
+                color: $Gray;
+                text-align: justify;
+                margin-block: 15px;
+            }
+        }
+        .product {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            .card {
+                width: 263px;
+                margin: 10px;
+                height: 420px;
+                .card-img {
+                    height: 336px;
+                    width: 100%;
+                    img {
+                        @include img-fluid;
+                    }
+                }
+                .card-text {
+                    padding: 5px;
+                    font-size: 16px;
+                    font-weight: normal;
+                    font-style: normal;
+                    font-variant: normal;
+                    letter-spacing: normal;
+                    line-height: 20px;
+                    text-transform: lowercase;
+                    color: $Card-color;
+                    margin-block-end: 5px;
+                }
+                .card-pannier {
+                    display: none;
+                }
+                .card-price {
+                    width: 100%;
+                    height: auto;
+                    padding: 5px;
+                    font-size: 16px;
+                    font-weight: 900;
+                    font-style: italic;
+                    font-variant: normal;
+                    letter-spacing: normal;
+                    text-transform: uppercase;
+                    color: $First-color;
+                    margin-block-end: 5px;
+                }
+                .card-voir {
+                    display: none;
+                }
+                &:hover {
+                    overflow: hidden;
+                    height: 420px;
+                    .card-img {
+                        transition: all 0.5s ease;
+                        overflow: hidden;
+                        height: 250px;
+                        width: 100%;
+                        img {
+                            @include img-fluid;
+                        }
+                    }
+                    .card-voir {
+                        cursor: pointer;
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        padding: 10px;
+                        text-align: center;
+                        margin-block-end: 5px;
+                        transition: 0.5s;
+                        a {
+                            font-size: 14px;
+                            font-weight: 900;
+                            color: $First-color;
+                            text-transform: uppercase;
+                        }
+                        &:hover {
+                            a {
+                                color: $White;
+                            }
+                            background-color: $First-color;
+                        }
+                    }
+                    .card-pannier {
+                        cursor: pointer;
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        padding: 10px;
+                        margin-block-end: 5px;
+                        transition: 0.5s;
+                        text-align: center;
+                        a {
+                            font-size: 14px;
+                            font-weight: 900;
+                            color: $First-color;
+                            text-transform: uppercase;
+                        }
+                        &:hover {
+                            a {
+                                color: $White;
+                            }
+                            background-color: $First-color;
+                        }
+                    }
+                    .card-price {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/*
+*
+*   Media Query : 
+*
+*/
+@include large {
+    .Categorie {
+        margin-block: 40px;
+        .content {
+            padding: 20px;
+            .text {
+                margin-block-end: 25px;
+                h1 {
+                    font-size: 25px;
+                }
+                p {
+                    font-size: 14px;
+                    margin-block: 10px;
+                }
+            }
+            .product {
+                .card {
+                    width: 250px;
+                    height: auto;
+                    margin: 10px;
+                    .card-img {
+                        height: auto;
+                        width: 100%;
+                        img {
+                            @include img-fluid;
+                        }
+                    }
+                    .card-text {
+                        font-size: 12px;
+                    }
+                    .card-price {
+                        font-size: 12px;
+                    }
+                    &:hover {
+                        .card-voir {
+                            a {
+                                font-size: 11px;
+                            }
+                        }
+                        .card-pannier {
+                            a {
+                                font-size: 11px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include meduim {
+    .Categorie {
+        margin-block: 30px;
+        .content {
+            padding: 10px;
+            .text {
+                margin-block-end: 20px;
+                h1 {
+                    font-size: 20px;
+                }
+                p {
+                    font-size: 12px;
+                    margin-block: 10px;
+                }
+            }
+            .product {
+                .card {
+                    width: 150px;
+                    margin: 0 10px;
+                    .card-img {
+                        height: 150px;
+                        padding: 30px;
+                    }
+                    .card-text {
+                        font-size: 10px;
+                        margin-block-end: 5px;
+                    }
+                    .card-price {
+                        padding: 5px;
+                        font-size: 11px;
+                        margin-block-end: 5px;
+                    }
+                    &:hover {
+                        .card-voir {
+                            padding: 6px;
+                            margin-block-end: 5px;
+                            a {
+                                font-size: 10px;
+                            }
+                        }
+                        .card-pannier {
+                            padding: 6px;
+                            margin-block-end: 5px;
+                            a {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include x-small {
+    .Categorie {
+        margin-block: 20px;
+        .content {
+            padding: 5px;
+            .text {
+                margin-block-end: 10px;
+                h1 {
+                    font-size: 16px;
+                }
+                p {
+                    font-size: 10px;
+                    margin-block: 10px;
+                }
+            }
+        }
+    }
+}

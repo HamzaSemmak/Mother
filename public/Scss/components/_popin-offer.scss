@@ -1,0 +1,262 @@
+/*
+*
+*   Component : Offer
+* 
+*/
+
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+
+.offer-poppin {
+    background-color: $White;
+    width: 600px;
+    height: 350px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    color: $Black;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+    top: -100%;
+    animation:  drop-modal 1.5s ease forwards;
+    display: none;
+    .content-offer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+    }
+    .img-offer {
+        width: auto;
+        height: auto;
+        padding: 20px;
+        img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+        }
+    }
+    .text-offer {
+        margin-left: 10px;
+        text-align: center;
+        .title {
+            font-size: 30px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            color: #333;
+        }
+        .title-2 {
+            margin-block: 15px;
+            span {
+                font-size: 60px;
+                font-weight: 900;
+                color: $First-color;
+                text-transform: uppercase;
+            }
+            font-size: 50px;
+            font-weight: 800;
+            line-height: 40px;
+            color: #333;
+        }
+        .text {
+            margin-left: 30px;
+            text-align: start;
+            font-size: 16px;
+            font-weight: 500;
+            font-style: normal;
+        }
+        .btn-field-offer {
+            margin-block-start: 30px;
+            text-align: center;
+            a {
+                color: $White;
+                background-color: $First-color;
+                padding: 13px;
+                text-align: center;
+                width: auto;
+                height: auto;
+                border: none;
+                border-radius: 3px;
+                outline: none;
+                margin-block: 15px;
+                font-size: 15px;
+                font-weight: bold;
+                font-style: normal;
+                font-variant: normal;
+                letter-spacing: normal;
+                line-height: normal;
+                line-height: 22px;
+                text-transform: uppercase; 
+                cursor: pointer;
+
+                &:hover { 
+                    color: $First-color; 
+                    background-color: $White;
+                }
+            }
+        }
+
+        .close {
+            position: absolute;
+            right: 5%;
+            top: 5%;
+            border-radius: 50%;
+            color: #333;
+            i {
+                font-size: 20px;
+                text-align: center;
+
+                &:hover {
+                    color: $First-color;
+                }
+            }
+        }
+    }
+}
+
+@keyframes drop-modal {
+    0% {}
+    70% { top: 50%; }
+    100% { top: 50%; }
+}
+
+/*
+*
+*   Media Query :
+*
+*/
+@include large {
+    .offer-poppin {
+        width: 350px;
+        height: auto;
+        border-radius: 10px;
+        padding: 20px;
+        flex-direction: column;
+        .img-offer {
+            position: absolute;
+            left: 50%;
+            top: 0%;
+            transform: translate(-50%, -50%);
+            background-color: $White;
+            border-radius: 50%;
+        }
+        .text-offer {
+            margin-left: 0;
+            margin-top: 90px;
+            .title {
+                font-size: 25px;
+            }
+            .title-2 {
+                margin-block: 12px;
+                span {
+                    font-size: 50px;
+                }
+                font-size: 40px;
+            }
+            .text {
+                margin-left: 0px;
+                text-align: center;
+                font-size: 15px;
+            }
+            .btn-field-offer {
+                margin-block-start: 20px;
+                margin-block-end: 20px;
+                text-align: center;
+                a {
+                    padding: 10px;
+                    margin-block: 0px;
+                    font-size: 14px;
+                }
+            }
+            .close {
+                i {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+}
+
+@include meduim {
+    .offer-poppin {
+        width: 300px;
+        height: auto;
+        .img-offer {
+            img {
+                padding: 10px;
+                @include img-fluid;
+            }
+        }
+        .text-offer {
+            margin-top: 60px;
+            .title {
+                font-size: 18px;
+            }
+            .title-2 {
+                margin-block: 0px;
+                span {
+                    font-size: 30px;
+                }
+                font-size: 25px;
+            }
+            .text {
+                margin-left: 0px;
+                text-align: center;
+                font-size: 12px;
+            }
+            .btn-field-offer {
+                margin-block-start: 20px;
+                margin-block-end: 15px;
+                a {
+                    padding: 8px;
+                    font-size: 12px;
+                }
+            }
+            .close {
+                i {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+
+@include x-small {
+    .offer-poppin {
+        width: 80%;
+        .img-offer {
+            img {
+                padding: 0px;
+            }
+        }
+        .text-offer {
+            margin-top: 50px;
+            .title {
+                font-size: 16px;
+            }
+            .title-2 {
+                span {
+                    font-size: 25px;
+                }
+                font-size: 20px;
+            }
+            .text {
+                font-size: 10px;
+            }
+            .btn-field-offer {
+                margin-block-start: 15px;
+                margin-block-end: 10px;
+                a {
+                    padding: 7px;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}

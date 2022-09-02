@@ -1,0 +1,201 @@
+/*
+*
+*   page : add new product
+* 
+*/
+
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+@import '../components/Button';
+
+.Page-add {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin-top: 90px;
+    .section-1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 40px;
+        h1 {
+            font-size: 30px;
+            font-weight: 700;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 1px;
+            color: $Black;
+            text-transform: uppercase;
+        }
+        div {
+            i {
+                height: 40px;
+                width: 40px;
+                padding: 5px;
+                background-color: $Black;
+                border-radius: 50%;
+                text-align: center;
+                font-size: 28px;
+                font-weight: 900;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: 1px;
+                color: $White;
+
+                &:hover {
+                    background-color: $First-color;
+                }
+            }
+        }
+    }
+    .section-2 {
+        margin-block-start: 50px;
+        height: auto;
+        .row {
+            height: auto;
+            width: 100%;
+            label {
+                font-size: 16px;
+                font-weight: 600;
+                font-style: normal;
+                font-style: normal;
+                line-height: normal;
+            }
+            .col-12 {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                button {
+                    @extend %Btn;
+                }
+            }
+        }
+    }
+}
+
+
+/*
+*
+*   Media Query : 
+*
+*/
+
+@include x-large {
+    .Page-add {
+        padding: 0px;
+        margin-top: 90px;
+        .section-1 {
+            padding-left: 0px;
+            padding-right: 10px;
+            h1 {
+                font-size: 25px;
+            }
+            div {
+                i {
+                    height: 30px;
+                    width: 30px;
+                    padding: 5px;
+                    font-size: 20px;
+                    font-weight: 900;
+                }
+            }
+        }
+        .section-2 {
+            margin-block-start: 40px;
+            .row {
+                label {
+                    font-size: 14px;
+                }
+                .col-12 {
+                    button {
+                        padding: 10px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include meduim {
+    .Page-add {
+        padding: 0px;
+        margin-top: 70px;
+        .section-1 {
+            padding-left: 0px;
+            padding-right: 10px;
+            h1 {
+                font-size: 22px;
+            }
+            div {
+                i {
+                    height: 27px;
+                    width: 27px;
+                    padding: 4px;
+                    font-size: 18px;
+                    font-weight: 900;
+                }
+            }
+        }
+        .section-2 {
+            margin-block-start: 30px;
+            .row {
+                label {
+                    font-size: 12px;
+                }
+                input {
+                    font-size: 13px;
+                }
+                .col-12 {
+                    button {
+                        padding: 8px;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include x-small {
+    .Page-add {
+        margin-top: 50px;
+        .section-1 {
+            padding-right: 0px;
+            h1 {
+                font-size: 18px;
+            }
+            div {
+                i {
+                    height: 25px;
+                    width: 25px;
+                    padding: 3px;
+                    font-size: 16px;
+                }
+            }
+        }
+        .section-2 {
+            margin-block-start: 20px;
+            .row {
+                label {
+                    font-size: 10px;
+                }
+                input {
+                    font-size: 10px;
+                }
+                .col-12 {
+                    button {
+                        padding: 6px;
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+

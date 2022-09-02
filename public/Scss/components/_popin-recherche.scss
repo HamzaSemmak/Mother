@@ -1,0 +1,433 @@
+/*
+*
+*   Component : Popin-recherche
+* 
+*/
+
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+
+
+.popin-recherche {
+    width: 100%;
+    height: 500px;
+    background-color: #efefef;
+    z-index: 100;
+    position: fixed;
+    top: 0%;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.6s;
+    animation-name: animatetop;
+    animation-duration: 0.6s;
+    transition: 0.5s;
+    display: none;
+    overflow: hidden;
+    .content {
+        @include container;
+        background-color: #efefef;
+        height: 100%;
+        padding: 30px;
+        position: relative;
+        .close {
+            position: absolute;
+            right: 30px;
+            top: 20px;
+            color: $Gray;
+            font-size: 15px;
+            &:hover {
+                color: $Black;
+                cursor: pointer;
+            }
+        }
+        .text {
+            color: $Black;
+            font-size: 15px;
+            font-weight: 500;
+            font-style: normal;
+            font-variant: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            text-transform: uppercase;
+        }
+        .field {
+            margin-block: 10px;
+            width: 100%;
+            height: 50px;
+            border-bottom: 1px solid $Gray;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            input {
+                width: 90%;
+                height: 100%;
+                background-color: #efefef;
+                border: none;
+                outline: none;
+                font-size: 22px;
+                font-weight: 700;
+                font-style: normal;
+                font-variant: normal;
+                letter-spacing: normal;
+                line-height: normal;
+            }
+            button {
+                width: 10%;
+                height: 100%;
+                font-size: 25px;
+                border: none;
+                background-color: #f1f1f1;
+                color: $Black;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        .Search-product {
+            width: 100%;
+            height: auto;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            .card {
+                width: 200px;
+                height: auto;
+                margin: 0 10px;
+                .card-img {
+                    background-color: $White;
+                    height: 200px;
+                    width: 100%;
+                    padding: 30px;
+                    img {
+                        max-width: 100%;
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .card-text {
+                    padding: 5px;
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-style: normal;
+                    font-variant: normal;
+                    letter-spacing: normal;
+                    line-height: normal;
+                    text-transform: lowercase;
+                    color: $Card-color;
+                    margin-block-end: 5px;
+                }
+                .card-pannier {
+                    display: none;
+                }
+                .card-price {
+                    width: 100%;
+                    height: auto;
+                    padding: 5px;
+                    font-size: 16px;
+                    font-weight: 900;
+                    font-style: italic;
+                    font-variant: normal;
+                    letter-spacing: normal;
+                    text-transform: uppercase;
+                    color: $First-color;
+                    margin-block-end: 5px;
+                }
+                .card-voir {
+                    display: none;
+                }
+                &:hover {  
+                    transition: all 5s ease-in-out;
+                    .card-img {
+                        display: none;
+                    } 
+                    .card-voir {
+                        cursor: pointer;
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        padding: 10px;
+                        text-align: center;
+                        margin-block-end: 5px;
+                        transition: 0.5s;
+                        a {
+                            font-size: 14px;
+                            font-weight: 900;
+                            color: $First-color;
+                            text-transform: uppercase;
+                        }
+                        &:hover {
+                            a {
+                                color: $White;
+                            }
+                            background-color: $First-color;
+                        }
+                    }
+                    .card-pannier {
+                        cursor: pointer;
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        padding: 10px;
+                        margin-block-end: 5px;
+                        transition: 0.5s;
+                        text-align: center;
+                        a {
+                            font-size: 14px;
+                            font-weight: 900;
+                            color: $First-color;
+                            text-transform: uppercase;
+                        }
+                        &:hover {
+                            a {
+                                color: $White;
+                            }
+                            background-color: $First-color;
+                        }
+                    }
+                    .card-price {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+@-webkit-keyframes animatetop {
+    from {
+      top: -300px;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+    }
+}
+@keyframes animatetop {
+    from {
+      top: -300px;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+    }
+}
+
+
+/*
+*
+*   Mediaa Query : 
+*
+*
+*/
+@include large {
+    .popin-recherche {
+        height: 460px;
+        .content {
+            padding: 20px;
+            .close {
+                position: absolute;
+                right: 30px;
+                top: 15px;
+                font-size: 14px;
+            }
+            .text {
+                font-size: 13px;
+            }
+            .field {
+                margin-block: 8px;
+                height: 40px;
+                input {
+                    width: 90%;
+                    font-size: 16px;
+                }
+                button {
+                    width: 10%;
+                    font-size: 16px;
+                }
+            }
+            .Search-product {
+                padding: 10px;
+                display: flex;
+                .card {
+                    width: 180px;
+                    margin: 0 10px;
+                    .card-img {
+                        height: 180px;
+                        padding: 30px;
+                    }
+                    .card-text {
+                        font-size: 12px;
+                        margin-block-end: 5px;
+                    }
+                    .card-price {
+                        padding: 5px;
+                        font-size: 14px;
+                        margin-block-end: 5px;
+                    }
+                    &:hover {
+                        .card-voir {
+                            padding: 10px;
+                            margin-block-end: 5px;
+                            a {
+                                font-size: 12px;
+                            }
+                        }
+                        .card-pannier {
+                            padding: 10px;
+                            margin-block-end: 5px;
+                            a {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include meduim {
+    .popin-recherche {
+        height: 450px;
+        .content {
+            padding: 20px;
+            .close {
+                position: absolute;
+                right: 30px;
+                top: 15px;
+                font-size: 14px;
+            }
+            .text {
+                font-size: 13px;
+            }
+            .field {
+                margin-block: 8px;
+                height: 40px;
+                input {
+                    width: 90%;
+                    font-size: 16px;
+                }
+                button {
+                    width: 10%;
+                    font-size: 16px;
+                }
+            }
+            .Search-product {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                .card {
+                    width: 150px;
+                    margin: 0 10px;
+                    .card-img {
+                        height: 150px;
+                        padding: 20px;
+                    }
+                    .card-text {
+                        font-size: 10px;
+                        margin-block-end: 5px;
+                    }
+                    .card-price {
+                        padding: 5px;
+                        font-size: 11px;
+                        margin-block-end: 5px;
+                    }
+                    &:hover {
+                        .card-voir {
+                            padding: 6px;
+                            margin-block-end: 5px;
+                            a {
+                                font-size: 10px;
+                            }
+                        }
+                        .card-pannier {
+                            padding: 6px;
+                            margin-block-end: 5px;
+                            a {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include x-small {
+    .popin-recherche {
+        height: 450px;
+        .content {
+            padding: 20px;
+            .close {
+                text-align: right;
+                position: relative;
+                right: 0;
+                top: 0;
+                font-size: 14px;
+                margin-block-end: 10px;
+            }
+            .text {
+                font-size: 11px;
+            }
+            .field {
+                margin-block: 8px;
+                height: 40px;
+                input {
+                    width: 90%;
+                    font-size: 16px;
+                }
+                button {
+                    width: 10%;
+                    font-size: 16px;
+                }
+            }
+            .Search-product {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                .card {
+                    width: 90%;
+                    margin: 0 10px;
+                    .card-img {
+                        height: auto;
+                        padding: 20px;
+                    }
+                    .card-text {
+                        font-size: 10px;
+                        margin-block-end: 5px;
+                    }
+                    .card-price {
+                        padding: 5px;
+                        font-size: 11px;
+                        margin-block-end: 5px;
+                    }
+                    &:hover {
+                        .card-voir {
+                            padding: 6px;
+                            margin-block-end: 5px;
+                            a {
+                                font-size: 10px;
+                            }
+                        }
+                        .card-pannier {
+                            padding: 6px;
+                            margin-block-end: 5px;
+                            a {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

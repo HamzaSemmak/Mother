@@ -1,0 +1,189 @@
+/*
+*
+*   page : NotreHistoire
+* 
+*/
+
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+@import '../components/Button';
+
+
+.PointsDeVente {
+    height: auto;
+    width: 100%;
+    background-color: $White;
+    color: $Black;
+    margin-block: 50px;
+    .content {
+        @include container;
+        color: $Black;
+        height: 100%;
+        padding: 20px;
+        .text {
+            margin-block-end: 30px;
+            text-align: center;
+            h1 {
+                font-size: 30px;
+                font-weight: 900;
+                font-style: normal;
+                font-variant: normal;
+                letter-spacing: 0.1px;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+            p {
+                font-size: 16px;
+                font-weight: 700;
+                font-style: normal;
+                font-variant: normal;
+                line-height: normal;
+                text-transform: lowercase;
+                color: $Gray;
+                margin-block: 15px;
+            }
+        }
+        .text2 {
+            p {
+                font-size: 16px;
+                font-style: normal;
+                font-variant: normal;
+                line-height: normal;
+                text-transform: lowercase;
+                color: $Black;
+                margin-block: 15px;
+            }
+        }
+        .row {
+            margin-block-end: 30px;
+            .Exeption {
+                width: 100%;
+                height: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                img {
+                    @include img-fluid;
+                }
+                h4 {
+                    font-size: 25px;
+                    font-weight: 900;
+                    font-style: normal;
+                    font-variant: normal;
+                    letter-spacing: 0.1px;
+                    line-height: normal;
+                    text-transform: uppercase;
+                    color: $First-color;
+                }
+            }
+        }
+    }
+}
+
+
+
+/*
+*
+*   Media Query : 
+*
+*/
+@include large {
+    .PointsDeVente {
+        margin-block: 40px;
+        .content {
+            padding: 20px;
+            .text {
+                margin-block-end: 25px;
+                h1 {
+                    font-size: 25px;
+                }
+                p {
+                    font-size: 14px;
+                    margin-block: 10px;
+                }
+            }
+            .text2 {
+                p {
+                    font-size: 14px;
+                    margin-block: 10px;
+                }
+            }
+            .row {
+                margin-block-end: 25px;
+                .Exeption {
+                    h4 {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include meduim {
+    .PointsDeVente {
+        margin-block: 30px;
+        .content {
+            padding: 10px;
+            .text {
+                margin-block-end: 20px;
+                h1 {
+                    font-size: 20px;
+                }
+                p {
+                    font-size: 12px;
+                    margin-block: 10px;
+                }
+            }
+            .text2 {
+                p {
+                    font-size: 12px;
+                    margin-block: 10px;
+                }
+            }
+            .row {
+                margin-block-end: 15px;
+                .Exeption {
+                    h4 {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include x-small {
+    .PointsDeVente {
+        margin-block: 20px;
+        .content {
+            padding: 5px;
+            .text {
+                margin-block-end: 10px;
+                h1 {
+                    font-size: 16px;
+                }
+                p {
+                    font-size: 10px;
+                    margin-block: 10px;
+                }
+            }
+            .text2 {
+                p {
+                    font-size: 10px;
+                    margin-block: 10px;
+                }
+            }
+            .row {
+                margin-block-end: 10px;
+                .Exeption {
+                    h4 {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

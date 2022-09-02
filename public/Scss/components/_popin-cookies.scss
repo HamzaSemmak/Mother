@@ -1,0 +1,401 @@
+/*
+*
+*   Component : Popin-cookies
+* 
+*/
+
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+
+
+.popin-cookies {
+    width: 900px;
+    height: 650px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.8) !important;
+    overflow-Y: scroll;
+    overflow-x: hidden;
+    z-index: 100;
+    background-color: $White;
+    display: none;
+    .intro {
+        padding: 15px;
+        width: 100%;
+        height: auto;
+        background-color: $Popin-color;
+        color: $White;
+        .close {
+            position: relative;
+            left: 98%;
+            font-size: 22px;
+            color: $White;
+        }
+        .close:hover {
+            color: $Black;
+        }
+        .intro-text {
+            text-align: center;
+            padding: 10px;
+            h1 {
+                font-family: 'Raleway', sans-serif;
+                font-size: 26px;
+                font-weight: bold;
+                font-style: normal;
+                font-variant: normal;
+                letter-spacing: normal;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+            p {
+                font-family: 'Raleway', sans-serif;
+                font-size: 16px;
+                font-style: normal;
+                font-variant: normal;
+                letter-spacing: normal;
+                line-height: normal;
+                line-height: 20px;
+                padding: 15px 12px;
+                margin-block-start: 5px;
+            }
+        }
+    }
+    hr {
+        margin-block: 10px;
+        width: 100%;
+        color: $Gray;
+    }
+    .red-btn {
+        padding: 10px;
+        color: $White;
+        background-color: #da1a35;
+        font-family: 'Raleway', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        font-style: normal;
+        font-variant: normal;
+        letter-spacing: normal;
+        line-height: normal;
+        text-transform: uppercase;
+        border: none;
+        outline: none;
+        width: 170px;
+        height: 40px;
+    }
+    .green-btn {
+        padding: 10px;
+        color: $White;
+        background-color: #1b9b5d;
+        font-family: 'Raleway', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        font-style: normal;
+        font-variant: normal;
+        letter-spacing: normal;
+        line-height: normal;
+        text-transform: uppercase;
+        border: none;
+        outline: none;
+        width: 170px;
+        height: 40px;
+    }
+    .modal-btns {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        button:hover {
+            color: $Popin-color;
+            cursor: pointer;
+        }
+    }
+    .modal-content {
+        padding: 5px;
+        background-color: $White;
+        height: auto;
+        width: 95%;
+        margin: 5px auto;
+        .Group-1 {
+            width: 100%;
+            height: auto;
+            border: 1px solid $Gray;
+            .title {
+                font-family: 'Raleway', sans-serif;
+                font-size: 16px;
+                font-weight: bold;
+                font-style: normal;
+                font-variant: normal;
+                letter-spacing: normal;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+        }
+        .Group-2 {
+            width: 100%;
+            height: auto;
+            .title {
+                font-family: 'Raleway', sans-serif;
+                font-size: 16px;
+                font-weight: bold;
+                font-style: normal;
+                font-variant: normal;
+                letter-spacing: normal;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+            p {
+                font-family: 'Raleway', sans-serif;
+                font-size: 10px;
+                font-style: normal;
+                font-variant: normal;
+                letter-spacing: normal;
+                line-height: normal;
+                text-transform: uppercase;
+                margin-block-start: 6px;
+                margin-block-end: 15px;
+            }
+            .Group-2-content {
+                width: 100%;
+                border: 1px solid $Gray;
+                margin-block-end: 10px;
+                .content {
+                    p:nth-child(1) {
+                        .tit {
+                            font-family: 'Raleway', sans-serif;
+                            font-size: 14px;
+                            font-weight: bold;
+                            font-style: normal;
+                            font-variant: normal;
+                            letter-spacing: normal;
+                            line-height: normal;
+                            text-transform: uppercase;
+                            line-height: 20px;
+                        }
+                    }
+                    .lien {
+                        display: flex;
+                        flex-wrap: wrap;
+                        span {
+                            font-family: 'Raleway', sans-serif;
+                            font-size: 12px;
+                            font-weight: bold;
+                            font-style: normal;
+                            font-variant: normal;
+                            letter-spacing: normal;
+                            line-height: normal;
+                            text-transform: uppercase;
+                            text-decoration: underline;
+                            text-transform: uppercase;
+                        }
+                        span:nth-child(1) {
+                            padding: 0 20px 0 0;
+                        }
+                        span:hover {
+                            color: $Gray;
+                            text-decoration: none;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#popins {
+    top: -100%;
+    animation:  drop-modal 1s ease forwards;
+}
+@keyframes drop-modal {
+    0% {}
+    70% { top: 50%; }
+    100% { top: 50%; }
+}
+
+@include x-large {
+    .popin-cookies {
+        width: 95%;
+        height: 650px;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+}
+
+@include large {
+    .popin-cookies {
+        width: 90%;
+        height: 600px;
+        .intro {
+            padding: 15px;
+            width: 100%;
+            height: auto;
+            .close {
+                font-size: 16px;
+            }
+            .intro-text {
+                padding: 10px;
+                h1 {
+                    font-size: 20px;
+                }
+                p {
+                    font-size: 14px;
+                    padding: 10px 8px;
+                    margin-block-start: 3px;
+                }
+            }
+        }
+        .red-btn {
+            font-size: 14px;
+            width: 130px;
+            height: 35px;
+        }
+        .green-btn {
+            font-size: 14px;
+            width: 130px;
+            height: 35px;
+        }
+        .modal-btns {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        .modal-content {
+            padding: 2px;
+            width: 90%;
+            margin: 5px auto;
+            .Group-1 {
+                width: 100%;
+                height: auto;
+                .title {
+                    font-size: 14px;
+                }
+            }
+            .Group-2 {
+                .title {
+                    font-size: 14px;
+                }
+                p {
+                    font-size: 9px;
+                    margin-block-start: 6px;
+                    margin-block-end: 10px;
+                }
+                .Group-2-content {
+                    width: 100%;
+                    margin-block-end: 10px;
+                    .content {
+                        p:nth-child(1) {
+                            .tit {
+                                font-size: 12px;
+                            }
+                        }
+                        .lien {
+                            display: flex;
+                            flex-wrap: wrap;
+                            span {
+                                font-size: 10px;
+                            }
+                            span:nth-child(1) {
+                                padding: 0 20px 0 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include meduim {
+    .popin-cookies {
+        width: 90%;
+        height: 500px;
+        .intro {
+            padding: 15px;
+            width: 100%;
+            height: auto;
+            .close {
+                font-size: 14px;
+            }
+            .intro-text {
+                padding: 5px;
+                h1 {
+                    font-size: 14px;
+                }
+                p {
+                    font-size: 10px;
+                    padding: 8px 6px;
+                    margin-block-start: 3px;
+                    line-height: normal;
+                }
+            }
+        }
+        .red-btn {
+            font-size: 10px;
+            width: 90px;
+            height: 30px;
+            margin-block: 5px;
+        }
+        .green-btn {
+            font-size: 10px;
+            width: 90px;
+            height: 30px;
+        }
+        .modal-btns {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        .modal-content {
+            padding: 2px;
+            width: 90%;
+            margin: 5px auto;
+            .Group-1 {
+                width: 100%;
+                height: auto;
+                .title {
+                    text-align: center;
+                    font-size: 11px;
+                }
+            }
+            .Group-2 {
+                .title {
+                    font-size: 11px;
+                }
+                p {
+                    font-size: 8px;
+                    margin-block-start: 6px;
+                    margin-block-end: 10px;
+                    line-height: 11px;
+                }
+                .Group-2-content {
+                    width: 100%;
+                    margin-block-end: 10px;
+                    .content {
+                        text-align: center;
+                        p:nth-child(1) {
+                            .tit {
+                                font-size: 11px;
+                            }
+                        }
+                        .lien {
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            justify-content: center;
+                            span {
+                                font-size: 9px;
+                            }
+                            span:nth-child(1) {
+                                padding: 0 20px 0 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

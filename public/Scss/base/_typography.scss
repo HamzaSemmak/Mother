@@ -1,0 +1,28 @@
+/*
+*
+*   Default font family, size and color of page
+* 
+*/
+
+@import '../abstracts/variables';
+
+body {
+    font-family: sans-serif;
+    background-color: $White;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}

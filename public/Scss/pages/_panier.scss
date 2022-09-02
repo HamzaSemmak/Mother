@@ -1,0 +1,219 @@
+/*
+*
+*   page : Panier
+* 
+*/
+
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+@import '../components/Button';
+
+.page-panier {
+    background-color: $White;
+    color: $Black;
+    @include container-fluid;
+    margin-block: 50px;
+    h1 {
+        font-size: 30px;
+        font-weight: 900;
+        font-style: normal;
+        font-variant: normal;
+        letter-spacing: 0.1px;
+        line-height: normal;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .Page-panier-content {
+        @include container;
+        margin-block-start: 30px;
+        .row {
+            width: 100%;
+            height: auto;
+            .col-8 {
+                padding-right: 25px;
+                .product {
+                    padding: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    // flex-wrap: wrap;
+                    border-radius: 3px;
+                    margin: 10px 0px;
+                    .product-data {
+                        display: flex;
+                        align-items: flex-start;
+                        .img-pdt{
+                            width: 100px;
+                            height: 100px;
+                            overflow: hidden;
+                            img {
+                                @include img-fluid;
+                            }
+                        }
+                        .pdt-data {
+                            margin-left: 15px;
+                            .ProductName {
+                                font-size: 18px;
+                                font-weight: 700;
+                                font-style: normal;
+                                font-variant: normal;
+                                line-height: normal;
+                                color: $Black;
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                            span {
+                                font-size: 16px;
+                                font-weight: 500;
+                                margin-block-start: 20px;
+                            }
+                            .stock {
+                                font-size: 12px;
+                                font-weight: 600;
+                                padding: 4px;
+                                border-radius: 2px;
+                                color: white;
+                                background-color: #28a745;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    .product-quantite {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        div {
+                            margin: 5px 40px;
+                        }
+                        // .counter {
+                        //     button {
+                        //         padding: 0px;
+                        //         text-align: center;
+                        //         border: none;
+                        //         border-radius: 50%;
+                        //         padding: 10px;
+                        //         background-color: #f1f1f1;
+                        //         outline: none;
+                        //         font-size: 14px;
+                        //     }
+                        //     span {
+                        //         margin-left: 10px;
+                        //         margin-right: 10px;
+                        //         font-size: 16px;
+                        //         color: $Gray;
+                        //     }
+                        // }
+                        .price {
+                            span {
+                                margin: 5px 5px 5px 5px;
+                                font-size: 16px;
+                                color: $Gray;
+                            }
+                        }
+                        .close {
+                            a {
+                                i {
+                                    font-size: 30px;
+                                    color: $Black;
+
+                                    &:hover {
+                                        color: $Gray;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .retour {
+                    margin-block-start: 80px;
+                    a {
+                        font-size: 16px;
+                        font-weight: 700;
+                        font-style: normal;
+                        font-variant: normal;
+                        line-height: normal;
+                        text-transform: uppercase;
+                        color: $Black;
+                        i {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+            .col-4 {
+                .section-1 {
+                    background-color: $dash-bg;
+                    padding: 20px;
+                    max-height: 300px;
+                    text-align: center;
+                    .ligne {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        width: 100%;
+                        margin-block-end: 8px;
+                        span {
+                            font-size: 16px;
+                            font-weight: 500;
+                            font-style: normal;
+                            font-variant: normal;
+                            line-height: normal;
+                        }
+                        .active-ligne {
+                            font-size: 20px;
+                            font-weight: 700;
+                        }
+                    }
+                    hr {
+                        margin-block-start: 20px;
+                        margin-block-end: 20px;
+                    }
+                    .Btn-command-field {
+                        text-align: center;
+                        margin-block-start: 30px;
+                        .btn-commande{
+                            @extend %Btn;
+                        }
+                    }
+                    .message-offre {
+                        margin-top: 25px;
+                    }
+                    
+                }
+                .section-2 {
+                    margin-block-start: 30px;
+                    .ligne {
+                        display: flex;
+                        align-items: center;
+                        color: $Black;
+                        margin-block-end: 15px;
+                        .icon {
+                            font-weight: 700;
+                            font-size: 20px;
+                            margin: 0 10px;
+                            color: #333;
+                        }
+                        .text {
+                            h6 {
+                                font-size: 14px;
+                                font-weight: 600;
+                                font-style: normal;
+                                font-variant: normal;
+                                line-height: normal;
+                            }
+                            font-size: 12px;
+                            font-style: normal;
+                            font-variant: normal;
+                            line-height: normal;
+                            color: #333;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
